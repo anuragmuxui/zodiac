@@ -1,5 +1,14 @@
-require 'i18n'
-I18n.config.load_path += Dir.glob(File.expand_path('../locales', __FILE__) + '/*.yml')
+require 'date'
+require 'yaml'
+
+module Zodiac
+  TRANSLATIONS = YAML.load_file(File.expand_path('../locales/en.yml', __FILE__)).
+    fetch('en').fetch('zodiac').freeze
+
+  def self.translate(sign)
+    TRANSLATIONS.fetch(sign.to_s)
+  end
+end
 
 require 'zodiac/finder'
 

@@ -14,7 +14,7 @@ module Zodiac
         end
         
         it 'provides #zodiac_sign' do
-          @date.zodiac_sign.should == I18n.t('zodiac.libra')
+          @date.zodiac_sign.should == 'Libra'
         end
         
         it "provides #zodiac_sign_id" do

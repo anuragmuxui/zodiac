@@ -9,7 +9,7 @@ module Zodiac
 
       def range_for(month_start, day_start, month_end, day_end)
         start, ending = date_for(month_start, day_start), date_for(month_end, day_end)
-        SimpleRange.new(start, ending)
+        start..ending
       end
     end
 
@@ -46,7 +46,7 @@ module Zodiac
 
     class << self
       def sign_for(date)
-        I18n.t!("zodiac.#{self.sign_symbol_for date}")
+        Zodiac.translate(self.sign_symbol_for(date))
       end
 
       def sign_id_for(date)
@@ -55,7 +55,7 @@ module Zodiac
 
       def sign_symbol_for(date)
         RANGES.each do |range, sign|
-          if range.days.cover? date_for(date[:month], date[:day])
+          if range.cover? date_for(date[:month], date[:day])
             return sign
           end
         end

@@ -97,13 +97,13 @@ describe Zodiac::ActiveRecord do
     describe "#zodiac_sign" do
       context "on a migrated model" do
         it "returns a correct zodiac sign based on date_for_zodiac attribute" do
-          @person.zodiac_sign.should == I18n.t('zodiac.pisces')
+          @person.zodiac_sign.should == 'Pisces'
         end
       end
       
       context "on a non-migrated model" do
         it "returns a correct zodiac sign based on date_for_zodiac attribute" do
-          @lite_person.zodiac_sign.should == I18n.t('zodiac.pisces')
+          @lite_person.zodiac_sign.should == 'Pisces'
         end
       end
       

@@ -28,7 +28,7 @@ Date.new(2011, 1, 1).zodiac_sign      # => "Capricorn"
 DateTime.new(2011, 4, 30).zodiac_sign # => "Taurus"
 ```
 
-`#zodiac_sign` returns values using `I18n` with "zodiac.#{sign}" path, so if you want your own translations, you can put them in your locale with keys like `zodiac.aries`, `zodiac.taurus` etc. See examples [here](http://github.com/7even/zodiac/blob/master/lib/locales/en.yml).
+`#zodiac_sign` returns the English zodiac sign name from the bundled locale data. The locale files are YAML files with keys like `zodiac.aries`, `zodiac.taurus` etc.
 
 There are also predicate methods which return `true` if the date is matching the specified zodiac sign (and `false` otherwise).
 
