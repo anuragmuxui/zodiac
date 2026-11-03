@@ -1,4 +1,3 @@
-require 'funtimes'
 require 'i18n'
 I18n.config.load_path += Dir.glob(File.expand_path('../locales', __FILE__) + '/*.yml')
 
